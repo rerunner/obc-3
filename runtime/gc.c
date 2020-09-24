@@ -176,10 +176,11 @@ static void *grab_chunk(unsigned size0) {
      return p;
 }
 #else 
-static void *grab_chunk(unsigned size) {
-     return VirtualAlloc(NULL, size, MEM_COMMIT|MEM_RESERVE,
-			 PAGE_READWRITE);
-}
+// Already defined at line 126
+//static void *grab_chunk(unsigned size) {
+//     return VirtualAlloc(NULL, size, MEM_COMMIT|MEM_RESERVE,
+//			 PAGE_READWRITE);
+//}
 #endif
 #endif
 

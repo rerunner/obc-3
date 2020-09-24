@@ -279,6 +279,10 @@ mybool custom_file(char *name) {
 #include <winbase.h>
 
 char *search_path(char *name) {
+#ifdef WINDOWS
+	// For Cygwin/X compilation
+#define _MAX_PATH MAX_PATH
+#endif
      static char buf[_MAX_PATH];
      char *filepart;
 
